@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy · BlackJack Solver</title>
+<meta name="description" content="BlackJack Solver: a blackjack trainer with card counting, true count, dealer odds and the best move for every hand.">
+<link rel="icon" href="img/logo.png"><meta name="theme-color" content="#2984ff">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light dark;--bg:#f4f7fb;--card:#fff;--fg:#14181f;--muted:#5f6b7a;--accent:#2984ff;--accent-2:#1254c8;--line:#e3e8ef;--shadow:0 10px 30px rgba(20,40,80,.08)}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#181c24;--fg:#f2f4f8;--muted:#9aa4b2;--accent:#5aa2ff;--accent-2:#2984ff;--line:#262b35;--shadow:0 10px 30px rgba(0,0,0,.35)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+header{position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 85%,transparent);border-bottom:1px solid var(--line)}
+.bar{max-width:1040px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--fg);text-decoration:none;letter-spacing:.2px}
+.brand img{width:32px;height:32px;border-radius:9px}
+nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;font-size:14px}
+nav a:hover,nav a.on{color:var(--fg);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.lang{display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang a{padding:4px 10px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:13px}
+.lang a.on{background:var(--accent);color:#fff}
+main{max-width:1040px;margin:0 auto;padding:0 20px 72px}
+article{max-width:760px;margin:40px auto 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px 40px;box-shadow:var(--shadow)}
+article h1{font-size:30px;line-height:1.2;margin:0 0 18px;letter-spacing:-.3px}
+article h2{font-size:20px;margin:32px 0 10px}
+article p{margin:10px 0}article li{margin:4px 0}
+article table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}
+article th,article td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+article th{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+code{font:13px/1.4 ui-monospace,Consolas,monospace;background:color-mix(in srgb,var(--fg) 7%,transparent);padding:1px 5px;border-radius:5px}
+section[hidden]{display:none}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:64px 0 32px}
+.hero h1{font-size:46px;line-height:1.08;margin:0 0 14px;letter-spacing:-.8px}
+.hero p.lead{font-size:19px;color:var(--muted);margin:0 0 26px;max-width:520px}
+.hero .art{background:linear-gradient(160deg,#348fff,#1254c8);border-radius:28px;padding:26px;box-shadow:var(--shadow);display:flex;justify-content:center}
+.hero .art img{width:100%;max-width:360px;border-radius:22px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:12px;background:var(--fg);color:var(--bg);text-decoration:none;font-weight:600;font-size:15px}
+.badge small{display:block;font-weight:400;font-size:11px;opacity:.75;line-height:1.1}
+.badge.soon{opacity:.55;pointer-events:none}
+.pill{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+h2.sec{font-size:30px;letter-spacing:-.4px;margin:56px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.card .ic{width:40px;height:40px;border-radius:12px;background:linear-gradient(160deg,#348fff,#1254c8);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;margin-bottom:14px}
+.card h3{margin:0 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{position:relative;padding:22px 22px 22px 64px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:20px;top:20px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step h3{margin:0 0 6px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:15px}
+.note{margin-top:56px;background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);border-radius:16px;padding:20px 22px;color:var(--fg)}
+.note strong{display:block;margin-bottom:6px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .bar{justify-content:space-between;flex-wrap:wrap;padding:18px 20px}
+footer a{color:var(--muted);text-decoration:none;margin-left:14px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}.hero h1{font-size:36px}.grid,.steps{grid-template-columns:1fr}article{padding:26px 20px}.bar{gap:10px}nav a{padding:6px 8px}}
+</style></head><body>
+<header><div class="bar"><a class="brand" href="index.html"><img src="img/logo.png" alt="">BlackJack Solver</a><nav><a href="index.html"><span data-t="en">Home</span><span data-t="ru" hidden>Главная</span></a><a href="terms.html"><span data-t="en">Terms</span><span data-t="ru" hidden>Условия</span></a><a href="privacy.html" class="on"><span data-t="en">Privacy</span><span data-t="ru" hidden>Конфиденциальность</span></a><a href="support.html"><span data-t="en">Support</span><span data-t="ru" hidden>Поддержка</span></a></nav>
+<div class="lang"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ru">RU</a></div></div></header>
+<main><article><section data-lang="en"><h1>Privacy Policy</h1>
+<p><strong>Application:</strong> BlackJack Solver.</p>
+<p><strong>Data controller:</strong> Ingenium Apps, e-mail: danilforworktelegram@gmail.com.</p>
+<p><strong>Effective date:</strong> 16 November 2026.</p>
+<h2>1. What data we process</h2>
+<p><strong>Account data.</strong> On first launch the app creates an anonymous account: a random user identifier. If you link a Google or Apple sign-in, we receive the account identifier and e-mail address from them (Apple may provide a hidden relay address).</p>
+<p><strong>Purchases.</strong> Product identifiers, date and amount, the store transaction identifier (Google Play / App Store) and status (paid, refunded). We never receive payment card data: payments are processed by the store.</p>
+<p><strong>Token balance and history.</strong> Token credits and charges, including the log of hands they were charged for (number of cards, actions). This is needed to compute the balance and to resolve disputed charges.</p>
+<p><strong>App settings.</strong> Table rules, counting method, language, theme, enabled side bets and their payouts.</p>
+<p><strong>Technical data.</strong> Device model, operating system and app version, language, anonymised crash and error reports.</p>
+<p>We do not collect location, contacts or photos and do not access the microphone or camera. The app shows no advertising and shares no data with ad networks.</p>
+<h2>2. Why and on what basis</h2>
+<table>
+<tr><th>Purpose</th><th>Data</th><th>Legal basis</th></tr>
+<tr><td>Running the app: storing balance, purchases and settings, restoring them on another device</td><td>account, purchases, balance, settings</td><td>performance of the contract (Terms of Use)</td></tr>
+<tr><td>Verifying purchases and refunds, preventing abuse</td><td>purchases, balance, account identifier</td><td>performance of the contract, legitimate interest</td></tr>
+<tr><td>Fixing bugs and improving the app</td><td>technical data</td><td>legitimate interest</td></tr>
+<tr><td>Answering support requests</td><td>e-mail, content of the request</td><td>performance of the contract, legitimate interest</td></tr>
+<tr><td>Legal obligations (accounting, lawful requests)</td><td>purchases</td><td>legal obligation</td></tr>
+</table>
+<h2>3. Who we share it with</h2>
+<p>Service providers process data on our behalf and only for the purposes above:</p>
+<ul>
+<li><strong>Google Play / Apple App Store</strong> — processing purchases and refunds (their own policies apply);</li>
+<li><strong>RevenueCat</strong> — purchase receipt validation and purchase history;</li>
+<li><strong>Supabase</strong> (or a comparable cloud provider) — storage of accounts, balance and settings; servers in the European Union;</li>
+<li><strong>Google / Apple</strong> — sign-in, if you linked it.</li>
+</ul>
+<p>We do not sell personal data and do not share it with third parties for their own purposes. Data may be disclosed on a lawful request from public authorities.</p>
+<h2>4. Where and how long</h2>
+<p>Account data is stored on the provider's servers in the European Union. For transfers to other countries we rely on standard contractual clauses or another permitted mechanism.</p>
+<p>Retention: account data for as long as the account exists and 30 days after deletion (backups); purchase records for as long as tax and accounting law requires (usually up to 10 years); crash reports up to 12 months; support correspondence up to 3 years.</p>
+<h2>5. Your rights</h2>
+<p>You may: obtain a copy of your data; correct it; delete your account (in the app: Settings → Profile → Delete account, or by e-mail to support); object to processing based on legitimate interest; withdraw consent where processing is based on consent; lodge a complaint with your country's data protection authority. For users in the EEA and the UK the GDPR / UK GDPR applies; for California residents the CCPA applies (we do not sell data or use it for targeted advertising).</p>
+<p>Send requests to danilforworktelegram@gmail.com. We respond within 30 days.</p>
+<h2>6. Account deletion</h2>
+<p>Deleting the account irreversibly removes the identifier, token balance, history and settings. Unused tokens are not refunded (see the Terms of Use). Purchase records are kept to the extent required by law.</p>
+<h2>7. Children</h2>
+<p>The app is intended for persons aged 18 or over. We do not knowingly collect data from children. If you believe a child has provided us with data, contact us and we will delete it.</p>
+<h2>8. Security</h2>
+<p>Data is transmitted over encrypted connections (TLS) and stored with providers that apply industry-standard safeguards. Access is limited to persons who need it to operate the app.</p>
+<h2>9. Changes</h2>
+<p>We may update this policy. The current version, with its date, is always available in the app. We will notify you in the app of material changes.</p></section>
+<section data-lang="ru"><h1>Политика конфиденциальности</h1>
+<p><strong>Приложение:</strong> BlackJack Solver.</p>
+<p><strong>Оператор данных:</strong> Ingenium Apps, e-mail: danilforworktelegram@gmail.com.</p>
+<p><strong>Редакция от:</strong> 16 ноября 2026 г.</p>
+<h2>1. Какие данные мы обрабатываем</h2>
+<p><strong>Данные аккаунта.</strong> При первом запуске приложение создаёт анонимный аккаунт: случайный идентификатор пользователя. Если вы привяжете вход через Google или Apple, мы получаем от них идентификатор учётной записи и адрес электронной почты (Apple может передать скрытый адрес-псевдоним).</p>
+<p><strong>Покупки.</strong> Идентификаторы товаров, дата и сумма покупки, идентификатор транзакции магазина (Google Play / App Store) и статус (оплачено, возвращено). Данные банковских карт мы не получаем: платежи обрабатывает магазин.</p>
+<p><strong>Баланс и история токенов.</strong> Начисления и списания токенов, в том числе журнал раздач, по которым они списаны (число карт, действия). Эти данные нужны, чтобы считать баланс и разбирать спорные списания.</p>
+<p><strong>Настройки приложения.</strong> Правила стола, метод счёта, язык, тема, включённые сайд-беты и их выплаты.</p>
+<p><strong>Технические данные.</strong> Модель устройства, версия операционной системы и приложения, язык, обезличенные отчёты об ошибках и сбоях.</p>
+<p>Мы не собираем геолокацию, контакты, фотографии и не получаем доступ к микрофону и камере. Приложение не показывает рекламу и не передаёт данные рекламным сетям.</p>
+<h2>2. Зачем и на каком основании</h2>
+<table>
+<tr><th>Цель</th><th>Данные</th><th>Основание</th></tr>
+<tr><td>Работа приложения: хранение баланса, покупок и настроек, восстановление на другом устройстве</td><td>аккаунт, покупки, баланс, настройки</td><td>исполнение договора (Условия использования)</td></tr>
+<tr><td>Проверка покупок и возвратов, защита от злоупотреблений</td><td>покупки, баланс, идентификатор аккаунта</td><td>исполнение договора, законный интерес</td></tr>
+<tr><td>Исправление ошибок и улучшение приложения</td><td>технические данные</td><td>законный интерес</td></tr>
+<tr><td>Ответы на обращения в поддержку</td><td>e-mail, содержание обращения</td><td>исполнение договора, законный интерес</td></tr>
+<tr><td>Выполнение требований закона (бухгалтерия, запросы госорганов)</td><td>покупки</td><td>юридическая обязанность</td></tr>
+</table>
+<h2>3. Кому передаём</h2>
+<p>Данные обрабатывают поставщики услуг от нашего имени и только для целей выше:</p>
+<ul>
+<li><strong>Google Play / Apple App Store</strong> — проведение покупок, возвраты (их собственные политики: Google, Apple);</li>
+<li><strong>RevenueCat</strong> — проверка чеков покупок и история покупок;</li>
+<li><strong>Supabase</strong> (или аналогичный облачный провайдер) — хранение аккаунтов, баланса и настроек; серверы в Европейском союзе;</li>
+<li><strong>Google / Apple</strong> — вход в аккаунт, если вы его привязали.</li>
+</ul>
+<p>Мы не продаём персональные данные и не передаём их третьим лицам для их собственных целей. Данные могут быть раскрыты по законному требованию государственных органов.</p>
+<h2>4. Где и сколько хранятся</h2>
+<p>Данные аккаунта хранятся на серверах провайдера в Европейском союзе. При передаче в другие страны применяются стандартные договорные положения или иной допустимый механизм.</p>
+<p>Сроки: данные аккаунта — пока существует аккаунт и 30 дней после его удаления (резервные копии); сведения о покупках — столько, сколько требует налоговое и бухгалтерское законодательство (обычно до 10 лет); технические отчёты об ошибках — до 12 месяцев; переписка с поддержкой — до 3 лет.</p>
+<h2>5. Ваши права</h2>
+<p>Вы можете: получить копию своих данных; исправить их; удалить аккаунт (в приложении: Настройки → Профиль → Удалить аккаунт, или письмом на e-mail поддержки); возразить против обработки на основании законного интереса; отозвать согласие там, где обработка основана на согласии; подать жалобу в надзорный орган по защите данных своей страны. Для пользователей из ЕЭЗ и Великобритании применяется GDPR / UK GDPR; для пользователей из Калифорнии — CCPA (мы не продаём данные и не используем их для таргетированной рекламы).</p>
+<p>Запросы направляйте на danilforworktelegram@gmail.com. Мы отвечаем в течение 30 дней.</p>
+<h2>6. Удаление аккаунта</h2>
+<p>При удалении аккаунта безвозвратно удаляются идентификатор, баланс токенов, история и настройки. Неиспользованные токены не возвращаются (см. Условия использования). Сведения о покупках сохраняются в объёме, который требует закон.</p>
+<h2>7. Дети</h2>
+<p>Приложение предназначено для лиц старше 18 лет. Мы сознательно не собираем данные детей. Если вам известно, что ребёнок передал нам данные, напишите нам, и мы их удалим.</p>
+<h2>8. Безопасность</h2>
+<p>Данные передаются по защищённым соединениям (TLS) и хранятся у провайдеров, применяющих отраслевые меры защиты. Доступ к данным имеют только лица, которым он нужен для работы приложения.</p>
+<h2>9. Изменения</h2>
+<p>Мы можем обновлять политику. Действующая редакция с датой всегда доступна в приложении. О существенных изменениях уведомим в приложении.</p></section></article></main>
+<footer><div class="bar"><span>© 2026 Ingenium Apps · <a href="mailto:danilforworktelegram@gmail.com" style="margin:0">danilforworktelegram@gmail.com</a></span>
+<span><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></span></div></footer>
+<script>
+const pick=(l)=>{document.documentElement.lang=l;document.querySelectorAll('section[data-lang]').forEach(s=>s.hidden=s.dataset.lang!==l);document.querySelectorAll('[data-t]').forEach(s=>s.hidden=s.dataset.t!==l);document.querySelectorAll('.lang a').forEach(a=>a.classList.toggle('on',a.dataset.lang===l));try{localStorage.setItem('lang',l)}catch(e){}};
+document.querySelectorAll('.lang a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();pick(a.dataset.lang)}));
+let l='en';try{l=localStorage.getItem('lang')||(navigator.language.startsWith('ru')?'ru':'en')}catch(e){}pick(l);
+</script></body></html>
